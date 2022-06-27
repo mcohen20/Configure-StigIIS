@@ -23,12 +23,16 @@
     Transcript report will be output to the $ServerPath variable; you will need to set this for the desired location.
 
     Configured/Reported Vulnerabilities: 
-    V-76679, V-76779, V-76781, V-76681, V-76783, V-76683, V-76785, V-76685, V-76787, V-76687, V-218789, V-76789, V-76791, V-76695, V-76697, V-76795, V-76701, V-76703, V-76707, V-76719, V-76709, V-76711, V-76797, V-76713, V-76803, 
-    V-V-218800, V-218801, V-76725, V-76727, V-76777, V-218807, V-76733, V-76829, V-76735, V-76737, V-76835, V-76753, V-76755, V-76757, V-76855, V-76759, V-76767, V-76769, V-76771, V-76773, V-76775, V-76813, V-76805, V-76809, V-76851, 
+    V-76679, V-76779, V-76781, V-76681, V-76783, V-214401, V-76785, V-76685, V-76787, V-76687, V-218789, V-76789, V-76791, V-76695, V-76697, V-76795, V-76701, V-76703, V-76707, V-76719, V-76709, V-76711, V-76797, V-76713, V-76803, 
+    V-V-218800, V-218801, V-76725, V-76727, V-76777, V-218807, V-76733, V-76829, V-76735, V-76737, V-76835, V-76753, V-218819, V-76757, V-76855, V-218821, V-76767, V-76769, V-218825, V-76773, V-76775, V-76813, V-76805, V-76809, V-76851, 
     V-76861, V-76811, V-76817, V-76819, V-76821, V-76823, V-76825, V-76827, V-76831, V-76837, V-76839, V-76841, V-76859, V-76867, V-76869, V-76871, V-76873, V-76875, V-76877, V-76879, V-76881, V-76883
 
     Require Manual Checks:
     V-76719, (V-76695, V-76697, V-76795), (V-76701, V-76751), V-76707, V-76745
+
+    Need to investigate V-218827: The IIS 10.0 web server must enable HSTS
+    Need to investigate V-241788: HTTPAPI Server version must be removed from the HTTP Respone Header information. Possible GPO? Registry update
+    Need to investigate V-241789: ASP.NET version must be removed from the HTTP Response Header information.
 #>
 
 param(
@@ -56,13 +60,13 @@ Catch {
     Break
 }
 
-function V-76759 {
+function V-218821 {
 <#
 .SYNOPSIS 
-    Check, configure, and verify SSL/TLS registry keys for vulnerability 76759.
+    Check, configure, and verify SSL/TLS registry keys for vulnerability 218821.
 
 .DESCRIPTION
-    Check, configure, and verify SSL/TLS registry keys for vulnerability 76759.
+    Check, configure, and verify SSL/TLS registry keys for vulnerability 218821.
 #>
 
     param (
@@ -133,7 +137,7 @@ function V-76759 {
 
         [PSCustomObject] @{
         
-            Vulnerability = 'V-76759'
+            Vulnerability = 'V-218821'
             Computername = $env:COMPUTERNAME
             Key = $Key0
             KeyPropertyName = $SubKeyName
@@ -188,7 +192,7 @@ function V-76759 {
 
         [PSCustomObject] @{
         
-            Vulnerability = 'V-76759'
+            Vulnerability = 'V-218821'
             Computername = $env:COMPUTERNAME
             Key = $Key1
             KeyPropertyName = $SubKeyName
@@ -336,13 +340,13 @@ function V-76681-76783 {
     }
 }
 
-function V-76683-76785 {
+function V-214401-76785 {
 <#
 .SYNOPSIS 
-    Check, configure, and verify baseline logging setting for vulnerability 76683 & 76785.
+    Check, configure, and verify baseline logging setting for vulnerability 214401 & 76785.
 
 .DESCRIPTION
-    Check, configure, and verify baseline logging setting for vulnerability 76683 & 76785.
+    Check, configure, and verify baseline logging setting for vulnerability 214401 & 76785.
 #>
 
     param(
@@ -414,7 +418,7 @@ function V-76683-76785 {
 
     [PSCustomObject] @{
             
-        Vulnerability = 'V-76683, V-76785'
+        Vulnerability = 'V-214401, V-76785'
         PreConfig = "$PreWeb"
         PostConfiguration = "$PostWeb"
         Compliant = if($PostWeb -eq "Both log file and ETW Event") {
@@ -432,10 +436,10 @@ function V-76683-76785 {
 function V-76685-76787 {
 <#
 .SYNOPSIS 
-    Check, configure, and verify baseline logging setting for vulnerability 76683 & 76787.
+    Check, configure, and verify baseline logging setting for vulnerability 214401 & 76787.
 
 .DESCRIPTION
-    Check, configure, and verify baseline logging setting for vulnerability 76683 & 76787.
+    Check, configure, and verify baseline logging setting for vulnerability 214401 & 76787.
 #>
         
     param(
@@ -490,13 +494,13 @@ function V-76685-76787 {
     }
 }
 
-function V-76687-76689-76789-76791 {
+function V-76687-218789-76789-76791 {
 <#
 .SYNOPSIS 
-    Check, configure, and verify Custom Logging Fields for vulnerabilities 76687, 76689, 76789, & 76791.
+    Check, configure, and verify Custom Logging Fields for vulnerabilities 76687, 218789, 76789, & 76791.
 
 .DESCRIPTION
-    Check, configure, and verify Custom Logging Fields for vulnerabilities 76687, 76689, 76789, & 76791.
+    Check, configure, and verify Custom Logging Fields for vulnerabilities 76687, 218789, 76789, & 76791.
 #>
             
     #Custom logging fields
@@ -1359,13 +1363,13 @@ function V-76753 {
     }
 }
 
-function V-76755 {
+function V-218819 {
 <#
 .SYNOPSIS 
-    Verify URI registry settings for vulnerability 76755.
+    Verify URI registry settings for vulnerability 218819.
 
 .DESCRIPTION
-    Verify URI registry settings for vulnerability 76755.
+    Verify URI registry settings for vulnerability 218819.
 #>
     param(
     
@@ -1396,7 +1400,7 @@ function V-76755 {
 
         [PSCustomObject] @{
                 
-            Vulnerability = "V-76755"
+            Vulnerability = "V-218819"
             Computername = $env:COMPUTERNAME
             Key = "$($ParameterKey)\$($Key)"
             Compliant = $KeyCompliant
@@ -1575,13 +1579,13 @@ function V-76769 {
     }
 }
 
-function V-76771 {
+function V-218825 {
 <#
 .SYNOPSIS 
-    Configure and verify Authorization Rules settings for vulnerability 76771.
+    Configure and verify Authorization Rules settings for vulnerability 218825.
 
 .DESCRIPTION
-    Configure and verify Authorization Rules settings for vulnerability 76771.
+    Configure and verify Authorization Rules settings for vulnerability 218825.
 #>
     param(
 
@@ -1603,7 +1607,7 @@ function V-76771 {
 
     [PSCustomObject] @{
                 
-        Vulnerability = "V-76771"
+        Vulnerability = "V-218825"
         Computername = $env:COMPUTERNAME
         PreConfigAuthorizedUsers = $PreConfigUsers.Value
         PostConfigurationAuthorizedUsers = $PostConfigurationUsers.Value
@@ -3243,9 +3247,9 @@ Start-Transcript -Path "$ServerPath\IIS-Transcript.txt" -Verbose -Force
 #Call functions, configure settings, and generate reports
 V-76679-76779-76781
 V-76681-76783
-V-76683-76785
+V-214401-76785
 V-76685-76787
-V-76687-76689-76789-76791
+V-76687-218789-76789-76791
 V-76695-76697-76795
 V-76701 
 V-76703 
@@ -3261,12 +3265,12 @@ V-76733-76829
 V-76735
 V-76737-76835 
 V-76753 
-V-76755 
+V-218819 
 V-76757-76855
-V-76759 
+V-218821 
 V-76767 
 V-76769 
-V-76771 
+V-218825 
 V-76773
 V-76775-76813 
 V-76805 
